@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { Logo, MainContainer, NameInput, NameSection, NameTitle, SeeCardsButton } from './styles';
+import { Logo, MainContainer, NameForm, NameInput, NameSection, NameTitle, SeeCardsButton } from './styles';
 
 const MainInteraction: React.FC = () => {
   return (
@@ -8,7 +8,7 @@ const MainInteraction: React.FC = () => {
       <Logo>
         <Image layout="fill" src="/Logo.png" alt="Valorant Logo"/>
       </Logo>
-      <form action="">
+      <NameForm>
         <NameSection>
           <NameTitle>
             Digite seu nome
@@ -18,7 +18,7 @@ const MainInteraction: React.FC = () => {
         <SeeCardsButton type="submit">
           Ver Cards
         </SeeCardsButton>
-      </form>
+      </NameForm>
     </MainContainer>
   );
 }

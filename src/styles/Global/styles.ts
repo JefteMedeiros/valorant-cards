@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -16,5 +16,21 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background: ${(props) => props.theme["brand-white"]};
+  }
+`;
+
+export const CharContainer = styled.div`
+  position: relative;
+  margin: 0 1.875rem;
+  width: 23.125rem;
+  height: 35.375rem;
+
+  @media screen and (max-width: 1366px) {
+    width: 18.875rem;
+    height: 25.875rem;
+  }
+
+  @media screen and (max-width: 1028px) {
+    display: none;
   }
 `;
