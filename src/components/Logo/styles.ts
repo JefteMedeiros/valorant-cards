@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const LogoContainer = styled.div`
   position: relative;
   width: 15rem;
+  margin-bottom: 2rem;
   height: 12.25rem;
 
   @media screen and (max-width: 1368px) {

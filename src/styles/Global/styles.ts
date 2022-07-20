@@ -17,6 +17,48 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${(props) => props.theme["brand-white"]};
   }
+
+  .swiper {
+    position: relative;
+    width: 64.375rem;
+    height: 100%;
+    padding-bottom: 60px;
+  }
+
+  .swiper-slide {
+    background: ${props => props.theme['brand-white']};
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-pagination-bullet {
+
+    width: 1.125rem;
+    height: 1.125rem;
+    text-align: center;
+    line-height: 1.25rem;
+    font-size: 12px;
+    color: #000;
+    opacity: 1;
+    background: ${props => props.theme['red-700']}
+  }
+
+  .swiper-pagination-bullet-active {
+    color: #fff;
+    background: ${props => props.theme['red-500']};
+  }
 `;
 
 export const CharContainer = styled.div`
@@ -54,7 +96,7 @@ export const CardsButton = styled.button`
   width: 20.4375rem;
   height: 5rem;
   line-height: 2.2;
-  
+
   font-size: 1.75rem;
   text-align: center;
   font-family: "Valorant", sans-serif;

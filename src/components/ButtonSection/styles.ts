@@ -3,7 +3,7 @@ import { CardsButton } from '../../styles/Global/styles';
 
 export const CardsContainer = styled.div`
   display: flex;
-  margin-top: 3rem;
+  margin-top: 1.25rem;
   gap: 1.25rem;
   padding-bottom: 60px;
 `;
