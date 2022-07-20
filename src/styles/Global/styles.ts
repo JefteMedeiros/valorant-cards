@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: "Valorant";
-    src: url('../../fonts/Valorant Font.ttf');
+    src: url('valorant.ttf');
     font-style: normal;
     font-weight: normal;
   }
@@ -22,6 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     position: relative;
     width: 64.375rem;
     height: 100%;
+    padding-top: 30px;
     padding-bottom: 60px;
   }
 
@@ -121,3 +122,9 @@ export const CardsButton = styled.button`
     height: 4.125rem;
   }
 `;
+
+export const DocumentText = styled.div`
+  font-family: "Valorant", sans-serif;
+  color: ${props => props.theme['red-500']};
+  line-height: 120%;
+`

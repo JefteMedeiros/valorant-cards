@@ -5,7 +5,7 @@ import { LogoContainer } from './styles';
 const Logo: React.FC = () => {
   return (
     <LogoContainer>
-      <Image layout="fill" src="/Logo.png" alt="Valorant Logo"/>
+      <Image priority layout="fill" src="/Logo.png" alt="Valorant Logo"/>
     </LogoContainer>
   );
 }

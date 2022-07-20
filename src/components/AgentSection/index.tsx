@@ -14,44 +14,42 @@ const AgentSection: React.FC = () => {
   const pagination = {
     clickable: true,
     renderBullet: (index: any, className: any) => {
-      return "<span class="+ className + "></span>";
+      return "<span class=" + className + "></span>";
     },
   };
 
   return (
-    <>
-      <Swiper
-        pagination={pagination}
-        modules={[Pagination]}
-        className="mySwiper"
-        slidesPerView={5}
-      >
-       <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-      </Swiper>
-    </>
+    <Swiper
+      pagination={pagination}
+      modules={[Pagination]}
+      className="mySwiper"
+      slidesPerView={5}
+    >
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+      <SwiperSlide>
+        <AgentCard />
+      </SwiperSlide>
+    </Swiper>
   );
 };
 

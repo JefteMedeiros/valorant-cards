@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { CardsButton } from '../../styles/Global/styles';
 
-export const CardsContainer = styled.div`
+export const CardsContainer = styled.nav`
   display: flex;
   margin-top: 1.25rem;
   gap: 1.25rem;

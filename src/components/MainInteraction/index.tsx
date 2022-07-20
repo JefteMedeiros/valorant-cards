@@ -6,7 +6,7 @@ const MainInteraction: React.FC = () => {
   return (
     <MainContainer>
       <Logo>
-        <Image layout="fill" src="/Logo.png" alt="Valorant Logo"/>
+        <Image priority layout="fill" src="/Logo.png" alt="Valorant Logo"/>
       </Logo>
       <NameForm>
         <NameSection>

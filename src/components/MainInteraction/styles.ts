@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { DocumentText } from "../../styles/Global/styles";
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,16 +38,13 @@ export const NameSection = styled.div`
   flex-direction: column;
 `;
 
-export const NameTitle = styled.label`
-  font-family: "Valorant", sans-serif;
+export const NameTitle = styled(DocumentText)`
   font-size: 2rem;
   margin-bottom: 3.375rem;
 
   @media screen and (max-width: 1368px) {
     font-size: 1.75rem;
   }
-
-  color: ${(props) => props.theme["red-500"]};
 `;
 
 export const NameInput = styled.input`
