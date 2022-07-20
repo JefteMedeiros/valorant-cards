@@ -34,3 +34,9 @@ export const CharContainer = styled.div`
     display: none;
   }
 `;
+
+export const HomeWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
