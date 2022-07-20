@@ -74,20 +74,21 @@ export const NameInput = styled.input`
   @media screen and (max-width: 1366px) {
     max-width: 18.75rem;
 
-    font-size: 1.625rem; 
+    font-size: 1.625rem;
   }
 `;
 
-export const SeeCardsButton = styled.button`
+export const SeeCardsButton = styled.a`
   height: 3.75rem;
   width: 18.75rem;
-
   margin-top: 3.5rem;
+  line-height: 2.2;
 
+  text-align: center;
   font-family: "Valorant", sans-serif;
   font-size: 1.75rem;
-
   color: ${(props) => props.theme["red-500"]};
+  text-decoration: none;
 
   border: 3px solid ${(props) => props.theme["red-500"]};
   border-radius: 10px;

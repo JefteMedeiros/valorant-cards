@@ -15,7 +15,7 @@ const MainInteraction: React.FC = () => {
           </NameTitle>
           <NameInput type="text" />
         </NameSection>
-        <SeeCardsButton type="submit">
+        <SeeCardsButton href="/Cards">
           Ver Cards
         </SeeCardsButton>
       </NameForm>
