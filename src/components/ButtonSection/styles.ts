@@ -8,6 +8,7 @@ export const CardsContainer = styled.nav`
   padding-bottom: 60px;
 `;
 
-export const PullCardButton = styled(CardsButton)``;
+export const PullCardButton = styled(CardsButton)`
+`;
 
 export const MixCardsButton = styled(CardsButton)``;

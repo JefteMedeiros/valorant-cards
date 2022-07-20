@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-export const FooterContainer = styled.div`
+export const FooterContainer = styled.footer`
   margin-top: auto;
-  padding: 14px 0;
+  padding: 7px 0;
   background: ${(props) => props.theme["red-500"]};
 `;
 

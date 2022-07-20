@@ -53,7 +53,8 @@ export const AgentCardDescription = styled(DocumentText)`
   margin-bottom: 0.3125rem;
 `;
 
-export const AgentCardMoreInfo = styled.div` 
+export const AgentCardMoreInfo = styled.button`
+  border: none;
   margin: auto;
   content: "";
   width: 0.75rem;
@@ -66,4 +67,9 @@ export const AgentCardMoreInfo = styled.div`
     cursor: pointer;
     transform: scale(1.15);
   }
+`;
+
+export const AgentCardInteraction = styled.div`
+  display: flex;
+  flex-direction: column;
 `;

@@ -14,10 +14,6 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
-    background: ${(props) => props.theme["brand-white"]};
-  }
-
   .swiper {
     position: relative;
     width: 64.375rem;
@@ -45,7 +41,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .swiper-pagination-bullet {
-
     width: 1.125rem;
     height: 1.125rem;
     text-align: center;
@@ -53,7 +48,12 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 12px;
     color: #000;
     opacity: 1;
-    background: ${props => props.theme['red-700']}
+    background: ${props => props.theme['red-700']};
+
+    @media screen and (max-width: 1366px) {
+      width: 0.75rem;
+    height: 0.75rem;
+    }
   }
 
   .swiper-pagination-bullet-active {
@@ -62,7 +62,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export const CharContainer = styled.div`
+export const CharContainer = styled.figure`
   position: relative;
   margin: 0 1.875rem;
   width: 23.125rem;
@@ -90,12 +90,12 @@ export const CardWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin-top: 1.625rem;
+  padding-top: 1.625rem;
 `;
 
 export const CardsButton = styled.button`
-  width: 20.4375rem;
-  height: 5rem;
+  width: 18.75rem;
+  height: 3.75rem;
   line-height: 2.2;
 
   font-size: 1.75rem;

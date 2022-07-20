@@ -16,7 +16,7 @@ const MainInteraction: React.FC = () => {
           <NameInput type="text" />
         </NameSection>
         <SeeCardsButton href="/Cards">
-          Ver Cards
+          Gerar Cards
         </SeeCardsButton>
       </NameForm>
     </MainContainer>

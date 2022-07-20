@@ -1,14 +1,13 @@
-import React from "react";
-// Import Swiper React components
+import React, {useContext} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
-// import required modules
 import { Pagination } from "swiper";
 import AgentCard from "../AgentCard";
+import AgentCardModal from "../AgentCardModal";
+import { Context } from "../../context";
 
 const AgentSection: React.FC = () => {
   const pagination = {
@@ -18,38 +17,35 @@ const AgentSection: React.FC = () => {
     },
   };
 
+  const {toggleModal} = useContext(Context);
+
   return (
-    <Swiper
-      pagination={pagination}
-      modules={[Pagination]}
-      className="mySwiper"
-      slidesPerView={5}
-    >
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-      <SwiperSlide>
-        <AgentCard />
-      </SwiperSlide>
-    </Swiper>
+    <>
+      <Swiper
+        pagination={pagination}
+        modules={[Pagination]}
+        className="mySwiper"
+        slidesPerView={5}
+      >
+        <SwiperSlide>
+          <AgentCard />
+        </SwiperSlide>
+        <SwiperSlide>
+          <AgentCard />
+        </SwiperSlide>
+        <SwiperSlide>
+          <AgentCard />
+        </SwiperSlide>
+        <SwiperSlide>
+          <AgentCard />
+        </SwiperSlide>
+        <SwiperSlide>
+          <AgentCard />
+        </SwiperSlide>
+        
+      </Swiper>
+      {toggleModal && <AgentCardModal />}
+    </>
   );
 };
 
