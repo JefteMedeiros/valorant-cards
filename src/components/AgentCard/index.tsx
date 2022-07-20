@@ -4,7 +4,7 @@ import { AgentCardContainer } from './styles';
 const AgentCard: React.FC = () => {
   return (
     <AgentCardContainer>
-      <h1>asdfasdfasdfasdf</h1>
+      Cookies
     </AgentCardContainer>
   );
 }

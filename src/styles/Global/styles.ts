@@ -25,7 +25,7 @@ export const CharContainer = styled.div`
   width: 23.125rem;
   height: 35.375rem;
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1368px) {
     width: 18.875rem;
     height: 25.875rem;
   }
@@ -73,7 +73,7 @@ export const CardsButton = styled.button`
     background: ${(props) => props.theme["red-500"]};
   }
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1368px) {
     font-size: 1.375rem;
     width: 17.125rem;
     height: 4.125rem;

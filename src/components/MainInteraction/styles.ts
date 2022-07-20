@@ -6,7 +6,7 @@ export const MainContainer = styled.div`
   align-items: center;
   margin: 5.5rem 0;
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1368px) {
     margin: 4rem 0;
   }
 
@@ -19,7 +19,7 @@ export const Logo = styled.div`
   margin-bottom: 3.2775rem;
   height: 281px;
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1368px) {
     width: 240px;
     height: 196px;
   }
@@ -42,7 +42,7 @@ export const NameTitle = styled.label`
   font-size: 2rem;
   margin-bottom: 3.375rem;
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1368px) {
     font-size: 1.75rem;
   }
 
@@ -71,7 +71,7 @@ export const NameInput = styled.input`
     border: 3px solid 9px solid ${(props) => props.theme["red-500"]};
   }
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1368px) {
     max-width: 18.75rem;
 
     font-size: 1.625rem;
