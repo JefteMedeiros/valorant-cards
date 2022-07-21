@@ -27,15 +27,21 @@ const AgentSection: React.FC = () => {
 
   const breakpoints = {
     0: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
-    660: {
-      slidesPerView: 3
+    410: {
+      slidesPerView: 2,
     },
-    1366: {
+    620: {
+      slidesPerView: 3,
+    },
+    880: {
+      slidesPerView: 4,
+    },
+    1080: {
       slidesPerView: 5,
-    }
-  }
+    },
+  };
 
   const dataMock = mock.data;
 

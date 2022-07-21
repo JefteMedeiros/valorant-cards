@@ -16,10 +16,26 @@ export const GlobalStyles = createGlobalStyle`
 
   .swiper {
     position: relative;
-    width: 64.375rem;
+    max-width: 64.375rem;
     height: 100%;
-    padding-top: 30px;
-    padding-bottom: 60px;
+    padding-top: 1.875rem;
+    padding-bottom: 3.125rem;
+
+    @media screen and (max-width: 1080px) {
+      width: 49.25rem;
+    }
+
+    @media screen and (max-width: 880px) {
+      width: 36.9375rem;
+    }
+
+    @media screen and (max-width: 620px) {
+      width: 24.625rem;
+    }
+
+    @media screen and (max-width: 410px) {
+      width: 12.3125rem;
+    }
   }
 
   .swiper-slide {
@@ -39,12 +55,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .swiper-pagination-bullet {
-    width: 1.125rem;
-    height: 1.125rem;
-    text-align: center;
-    line-height: 1.25rem;
-    font-size: 12px;
-    color: #000;
+    width: 0.875rem;
+    height: 0.875rem;
     opacity: 1;
     background: ${(props) => props.theme["red-700"]};
 
@@ -55,7 +67,6 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .swiper-pagination-bullet-active {
-    color: #fff;
     background: ${(props) => props.theme["red-500"]};
   }
 `;
@@ -94,7 +105,7 @@ export const CardWrapper = styled.div`
 export const CardsButton = styled.button`
   font-size: 1.75rem;
   font-weight: bold;
-  padding: 10px;
+  padding: 6px 15px;
   text-align: center;
   font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme["red-500"]};
