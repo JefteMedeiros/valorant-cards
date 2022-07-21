@@ -12,18 +12,24 @@ import {
   AgentCardInteraction,
 } from "./styles";
 
-const AgentCard: React.FC = () => {
+interface IProps {
+  image: string;
+  name: string;
+  description: string | undefined;
+}
+
+const AgentCard: React.FC<IProps> = ({ image, name, description }) => {
   const { toggleModal, handleToggleModal } = useContext(Context);
 
   return (
     <AgentCardContainer>
       <AgentCardChar>
-        <Image layout="fill" alt="Jett" src="/Jett.png" />
+        <Image layout="fill" alt="Jett" src={image} />
       </AgentCardChar>
       <AgentCardScore>7</AgentCardScore>
       <AgentCardInteraction>
-        <AgentCardName>Jett</AgentCardName>
-        <AgentCardDescription>Evasion, Mobility</AgentCardDescription>
+        <AgentCardName>{name}</AgentCardName>
+        <AgentCardDescription>{description}</AgentCardDescription>
         <AgentCardMoreInfo onClick={() => handleToggleModal(!toggleModal)} />
       </AgentCardInteraction>
     </AgentCardContainer>

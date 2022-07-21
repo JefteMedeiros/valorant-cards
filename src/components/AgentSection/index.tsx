@@ -1,5 +1,7 @@
-import React, {useContext} from "react";
+import React, {useState, useContext} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import { mock } from '../../mock/index';
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -17,6 +19,8 @@ const AgentSection: React.FC = () => {
     },
   };
 
+  const [dataMock, setDataMock] = useState(mock.data)
+
   const {toggleModal} = useContext(Context);
 
   return (
@@ -27,22 +31,13 @@ const AgentSection: React.FC = () => {
         className="mySwiper"
         slidesPerView={5}
       >
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <AgentCard />
-        </SwiperSlide>
-        
+        {dataMock.map((e) => {
+          return (
+            <SwiperSlide key={e.uuid}>
+              <AgentCard name={e.displayName} image={e.fullPortraitV2} description={e.role.displayName} />
+            </SwiperSlide>  
+          )
+        })}
       </Swiper>
       {toggleModal && <AgentCardModal />}
     </>

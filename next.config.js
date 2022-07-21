@@ -6,6 +6,9 @@ const nextConfig = {
     // Enables the styled-components SWC transform
     styledComponents: true,
   },
+  images: {
+    domains: ["media.valorant-api.com"]
+  }
 };
 
 module.exports = nextConfig;

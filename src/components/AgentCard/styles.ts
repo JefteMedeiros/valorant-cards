@@ -26,18 +26,20 @@ export const AgentCardScore = styled.div`
 
 export const AgentCardChar = styled.div`
   position: relative;
-  width: 10.625rem;
-  height: 16.3125rem;
+  width: 16.0625rem;
+  height: 14.5rem;
   margin: auto;
-  margin-bottom: -0.75rem;
   bottom: 1.875rem;
+  right: 1.875rem;
 
   img {
     position: absolute;
+    object-fit: contain;
   }
 
   @media screen and (max-width: 1366px) {
-    width: 8.625rem;
+    margin-bottom: -1rem;
+    width: 14.8125rem;
     height: 13.25rem;
   }
 `;
