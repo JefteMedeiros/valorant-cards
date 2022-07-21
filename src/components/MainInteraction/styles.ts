@@ -1,15 +1,12 @@
 import styled from "styled-components";
-import { DocumentText } from "../../styles/Global/styles";
+import { DocumentTextNunito } from "../../styles/Global/styles";
 
 export const MainContainer = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin: 5.5rem 0;
-
-  @media screen and (max-width: 1368px) {
-    margin: 4rem 0;
-  }
+  min-height: calc(100vh - 2.5625rem);
 
   background: ${(props) => props.theme["brand-white"]};
 `;
@@ -34,12 +31,14 @@ export const NameForm = styled.form`
 
 export const NameSection = styled.div`
   display: flex;
+  max-width: 20.625rem;
   align-items: center;
   flex-direction: column;
 `;
 
-export const NameTitle = styled(DocumentText)`
+export const NameTitle = styled(DocumentTextNunito)`
   font-size: 2rem;
+  font-weight: bold;
   margin-bottom: 3.375rem;
 
   @media screen and (max-width: 1368px) {
@@ -48,7 +47,7 @@ export const NameTitle = styled(DocumentText)`
 `;
 
 export const NameInput = styled.input`
-  max-width: 27.5rem;
+  max-width: 100%;
 
   color: ${(props) => props.theme["red-500"]};
   font-family: "Nunito", sans-serif;
@@ -77,13 +76,13 @@ export const NameInput = styled.input`
 `;
 
 export const SeeCardsButton = styled.a`
-  height: 3.75rem;
-  width: 18.75rem;
   margin-top: 3.5rem;
-  line-height: 2.2;
+  padding: 0.5625rem 0;
+  width: 100%;
 
   text-align: center;
-  font-family: "Valorant", sans-serif;
+  font-weight: bold;
+  font-family: "Nunito", sans-serif;
   font-size: 1.75rem;
   color: ${(props) => props.theme["red-500"]};
   text-decoration: none;

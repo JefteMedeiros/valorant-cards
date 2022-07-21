@@ -1,62 +1,77 @@
+import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React from "react";
 import { VscClose } from "react-icons/vsc";
-import { Context } from "../../context";
 
 import {
-  ModalWrapper,
+  ModalComponent,
   ModalContainer,
   ModalChar,
-  ModalCharInfo,
-  CharInfoTitle,
   CharInfoDescription,
   CharSkillSection,
   CharSkill,
   ModalCloseButton,
+  AgentCardMoreInfo,
+  OverlayBlur,
+  ModalWrapper,
+  CharInfoWrapper,
+  CharInfoName,
+  CharInfoBio,
+  CharInfoCategory,
+  CharInfoSkills,
 } from "./styles";
 
-const AgentCardModal: React.FC = () => {
-  const { handleToggleModal, toggleModal } = useContext(Context)
+interface IProps {
+  name: string;
+  modalDescription: string;
+  char: string;
+  bio: string;
+  category: string;
+}
 
+const AgentCardModal: React.FC<IProps> = ({
+  name,
+  bio,
+  category,
+  modalDescription,
+  char,
+}) => {
   return (
-    <ModalContainer>
-      <ModalCloseButton onClick={() => handleToggleModal(!toggleModal)}>
-        <VscClose />
-      </ModalCloseButton>
-      <ModalWrapper>
-        <ModalChar>
-          <Image alt="Jett" layout="fill" src="/Jett.png" />
-        </ModalChar>
-        <ModalCharInfo>
-          <div>
-            <CharInfoTitle>Jett</CharInfoTitle>
-            <CharInfoDescription>
-              Representing her home country of South Korea, Jett&apos;s agile and
-              evasive fighting style lets her take risks no one else can. She
-              runs circles around every skirmish, cutting enemies up before they
-              even know what hit them.
-            </CharInfoDescription>
-          </div>
-          <div>
-            <CharInfoTitle>Duelist</CharInfoTitle>
-            <CharInfoDescription>
-              Duelists are self-sufficient fraggers who their team expects,
-              through abilities and skills, to get high frags and seek out
-              engagements first.
-            </CharInfoDescription>
-          </div>
-          <div>
-            <CharInfoTitle>Skills</CharInfoTitle>
-            <CharSkillSection>
-              <CharSkill />
-              <CharSkill />
-              <CharSkill />
-              <CharSkill />
-            </CharSkillSection>
-          </div>
-        </ModalCharInfo>
-      </ModalWrapper>
-    </ModalContainer>
+    <ModalComponent>
+      <AgentCardMoreInfo />
+      <AlertDialog.Portal>
+        <OverlayBlur />
+        <ModalContainer>
+          <ModalWrapper>
+            <ModalChar>
+              <Image placeholder="blur" blurDataURL={char} layout="fill" src={char} alt={name} />
+            </ModalChar>
+            <CharInfoWrapper>
+              <section>
+                <CharInfoName>{name}</CharInfoName>
+                <CharInfoBio>{bio}</CharInfoBio>
+              </section>
+              <section>
+                <CharInfoCategory>{category}</CharInfoCategory>
+                <CharInfoDescription>{modalDescription}</CharInfoDescription>
+              </section>
+              <section>
+                <CharInfoSkills>Skills</CharInfoSkills>
+                <CharSkillSection>
+                  <CharSkill />
+                  <CharSkill />
+                  <CharSkill />
+                  <CharSkill />
+                </CharSkillSection>
+              </section>
+            </CharInfoWrapper>
+            <ModalCloseButton>
+              <VscClose />
+            </ModalCloseButton>
+          </ModalWrapper>
+        </ModalContainer>
+      </AlertDialog.Portal>
+    </ModalComponent>
   );
 };
 

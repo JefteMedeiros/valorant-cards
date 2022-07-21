@@ -14,7 +14,6 @@ const Cards: React.FC = () => {
     <ThemeProvider theme={defaultTheme}>
       <ContextProvider>
         <Layout>
-          <Header />
           <CardWrapper>
             <Logo />
             <AgentSection />

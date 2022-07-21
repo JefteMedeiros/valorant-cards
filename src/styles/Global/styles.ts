@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .swiper-slide {
-    background: ${props => props.theme['brand-white']};
+    background: ${(props) => props.theme["brand-white"]};
 
     /* Center slide text vertically */
     display: -webkit-box;
@@ -48,7 +48,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 12px;
     color: #000;
     opacity: 1;
-    background: ${props => props.theme['red-700']};
+    background: ${(props) => props.theme["red-700"]};
 
     @media screen and (max-width: 1366px) {
       width: 0.75rem;
@@ -58,7 +58,7 @@ export const GlobalStyles = createGlobalStyle`
 
   .swiper-pagination-bullet-active {
     color: #fff;
-    background: ${props => props.theme['red-500']};
+    background: ${(props) => props.theme["red-500"]};
   }
 `;
 
@@ -90,22 +90,20 @@ export const CardWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  padding-top: 1.625rem;
+  min-height: calc(100vh - 41px);
 `;
 
 export const CardsButton = styled.button`
-  width: 18.75rem;
-  height: 3.75rem;
-  line-height: 2.2;
-
   font-size: 1.75rem;
+  font-weight: bold;
+  padding: 10px;
   text-align: center;
-  font-family: "Valorant", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme["red-500"]};
   text-decoration: none;
 
   border: 3px solid ${(props) => props.theme["red-500"]};
-  border-radius: 10px;
+  border-radius: 8px;
 
   background: none;
   transition: all 200ms;
@@ -118,13 +116,18 @@ export const CardsButton = styled.button`
 
   @media screen and (max-width: 1368px) {
     font-size: 1.375rem;
-    width: 17.125rem;
-    height: 4.125rem;
   }
 `;
 
 export const DocumentText = styled.div`
-  font-family: "Valorant", sans-serif;
-  color: ${props => props.theme['red-500']};
+  color: ${(props) => props.theme["red-500"]};
   line-height: 120%;
-`
+`;
+
+export const DocumentTextValorant = styled(DocumentText)`
+  font-family: "Valorant", sans-serif;
+`;
+
+export const DocumentTextNunito = styled(DocumentText)`
+  font-family: "Nunito", sans-serif;
+`;

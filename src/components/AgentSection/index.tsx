@@ -1,7 +1,7 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { mock } from '../../mock/index';
+import { mock } from "../../mock/index";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -19,28 +19,43 @@ const AgentSection: React.FC = () => {
     },
   };
 
-  const [dataMock, setDataMock] = useState(mock.data)
+  const [dataMock, setDataMock] = useState(mock.data);
 
-  const {toggleModal} = useContext(Context);
+  const { toggleModal } = useContext(Context);
 
   return (
-    <>
-      <Swiper
-        pagination={pagination}
-        modules={[Pagination]}
-        className="mySwiper"
-        slidesPerView={5}
-      >
-        {dataMock.map((e) => {
-          return (
+    <Swiper
+      pagination={pagination}
+      modules={[Pagination]}
+      className="mySwiper"
+      slidesPerView={5}
+    >
+      {dataMock.map((e) => {
+        return (
+          <>
             <SwiperSlide key={e.uuid}>
-              <AgentCard name={e.displayName} image={e.fullPortraitV2} description={e.role.displayName} />
-            </SwiperSlide>  
-          )
-        })}
-      </Swiper>
-      {toggleModal && <AgentCardModal />}
-    </>
+              <AgentCard
+                bio={e.description}
+                category={e.role.displayName}
+                name={e.displayName}
+                char={e.fullPortraitV2}
+                modalDescription={e.role.description}
+                cardDescription={e.role.displayName}
+              />
+            </SwiperSlide>
+            {toggleModal && (
+              <AgentCardModal
+                modalDescription={e.role.description}
+                name={e.displayName}
+                bio={e.description}
+                category={e.role.displayName}
+                char={e.fullPortraitV2}
+              />
+            )}
+          </>
+        );
+      })}
+    </Swiper>
   );
 };
 

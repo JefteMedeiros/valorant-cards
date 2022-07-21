@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DocumentText } from "../../styles/Global/styles";
+import { DocumentTextNunito, DocumentTextValorant } from "../../styles/Global/styles";
 
 export const AgentCardContainer = styled.div`
   position: relative;
@@ -31,6 +31,11 @@ export const AgentCardChar = styled.div`
   margin: auto;
   bottom: 1.875rem;
   right: 1.875rem;
+  transition: all 300ms;
+
+  &:hover {
+    bottom: 2.475rem;
+  }
 
   img {
     position: absolute;
@@ -44,31 +49,15 @@ export const AgentCardChar = styled.div`
   }
 `;
 
-export const AgentCardName = styled(DocumentText)`
+export const AgentCardName = styled(DocumentTextValorant)`
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
 `;
 
-export const AgentCardDescription = styled(DocumentText)`
+export const AgentCardDescription = styled(DocumentTextNunito)`
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   margin-bottom: 0.3125rem;
-`;
-
-export const AgentCardMoreInfo = styled.button`
-  border: none;
-  margin: auto;
-  content: "";
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 50%;
-  background: ${(props) => props.theme["red-600"]};
-  transition: all 250ms;
-
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.15);
-  }
 `;
 
 export const AgentCardInteraction = styled.div`
