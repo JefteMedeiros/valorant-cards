@@ -1,6 +1,6 @@
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import styled from "styled-components";
-import { DocumentText, DocumentTextValorant } from "../../styles/Global/styles";
+import { DocumentTextValorant } from "../../styles/Global/styles";
 
 export const AgentCardMoreInfo = styled(AlertDialog.Trigger)`
   border: none;
@@ -20,26 +20,34 @@ export const AgentCardMoreInfo = styled(AlertDialog.Trigger)`
 
 export const OverlayBlur = styled(AlertDialog.Overlay)`
   @keyframes OverlayShow {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   z-index: 9999;
   inset: 0;
-  animation: OverlayShow cubic-bezier(0.16, 1, 0.3, 1) 250ms; 
+  animation: OverlayShow cubic-bezier(0.16, 1, 0.3, 1) 250ms;
 `;
 
 export const ModalComponent = styled(AlertDialog.Root)``;
 
 export const ModalContainer = styled(AlertDialog.Content)`
   @keyframes OverlayShow {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
-  animation: OverlayShow cubic-bezier(0.16, 1, 0.3, 1) 250ms; 
+  animation: OverlayShow cubic-bezier(0.16, 1, 0.3, 1) 250ms;
   background-color: ${(props) => props.theme["brand-white"]};
   border-radius: 10px;
   z-index: 9999;
@@ -57,18 +65,22 @@ export const ModalWrapper = styled.section`
 `;
 
 export const ModalChar = styled.div`
-position: relative;
-  width: 150px;
-  height: 231px;
+  position: relative;
+  width: 9.375rem;
+  height: 14.4375rem;
 
   img {
     object-fit: cover;
+  }
+
+  @media screen and (max-width: 540px) {
+    display: none;
   }
 `;
 
 export const CharInfoWrapper = styled.article`
   display: flex;
-  width: 287px;
+  width: 17.9375rem;
   flex-direction: column;
   gap: 0.75rem;
 `;
@@ -78,8 +90,7 @@ export const CharInfoName = styled(DocumentTextValorant)`
   padding-bottom: 0.25rem;
 `;
 
-export const CharInfoCategory = styled(DocumentTextValorant)`
-`;
+export const CharInfoCategory = styled(DocumentTextValorant)``;
 
 export const CharInfoSkills = styled(DocumentTextValorant)``;
 

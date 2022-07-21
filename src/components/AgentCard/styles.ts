@@ -42,7 +42,7 @@ export const AgentCardChar = styled.div`
     object-fit: contain;
   }
 
-  @media screen and (max-width: 1366px) {
+  @media screen and (max-width: 1368px) {
     margin-bottom: -1rem;
     width: 14.8125rem;
     height: 13.25rem;
@@ -61,6 +61,11 @@ export const AgentCardDescription = styled(DocumentTextNunito)`
 `;
 
 export const AgentCardInteraction = styled.div`
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
+
+  @media screen and (max-width: 1368px) {
+    margin-top: 0.5rem;
+  }
 `;

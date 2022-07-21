@@ -60,7 +60,7 @@ export const GlobalStyles = createGlobalStyle`
     opacity: 1;
     background: ${(props) => props.theme["red-700"]};
 
-    @media screen and (max-width: 1366px) {
+    @media screen and (max-width: 1368px) {
       width: 0.75rem;
       height: 0.75rem;
     }
@@ -103,21 +103,22 @@ export const CardWrapper = styled.div`
 `;
 
 export const CardsButton = styled.button`
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: bold;
-  padding: 6px 15px;
+  padding: 0.5625rem 1.125rem;
   text-align: center;
   font-family: "Nunito", sans-serif;
   color: ${(props) => props.theme["red-500"]};
   text-decoration: none;
 
   border: 3px solid ${(props) => props.theme["red-500"]};
-  border-radius: 8px;
+  border-radius: 100px;
 
   background: none;
   transition: all 200ms;
 
   &:hover {
+    transform: scale(1.05);
     color: ${(props) => props.theme["brand-white"]};
     cursor: pointer;
     background: ${(props) => props.theme["red-500"]};
