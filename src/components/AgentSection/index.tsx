@@ -1,32 +1,52 @@
 import React, { useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Keyboard, Pagination } from "swiper";
+import AgentCard from "../AgentCard";
+import AgentCardModal from "../AgentCardModal";
+import { KeyboardOptions, PaginationOptions } from "swiper/types";
+import { Context } from "../../context";
 
 import { mock } from "../../mock/index";
 
 import "swiper/css";
+import "swiper/css/keyboard";
 import "swiper/css/pagination";
 
-import { Pagination } from "swiper";
-import AgentCard from "../AgentCard";
-import AgentCardModal from "../AgentCardModal";
-import { Context } from "../../context";
-
 const AgentSection: React.FC = () => {
-  const pagination = {
+  const pagination: PaginationOptions = {
     clickable: true,
     renderBullet: (index: any, className: any) => {
       return "<span class=" + className + "></span>";
     },
   };
 
-  const [dataMock, setDataMock] = useState(mock.data);
+  const keyboardOptions: KeyboardOptions = {
+    enabled: true,
+    onlyInViewport: true,
+  };
+
+  const breakpoints = {
+    0: {
+      slidesPerView: 1
+    },
+    660: {
+      slidesPerView: 3
+    },
+    1366: {
+      slidesPerView: 5,
+    }
+  }
+
+  const dataMock = mock.data;
 
   const { toggleModal } = useContext(Context);
 
   return (
     <Swiper
+      breakpoints={breakpoints}
+      keyboard={keyboardOptions}
       pagination={pagination}
-      modules={[Pagination]}
+      modules={[Pagination, Keyboard]}
       className="mySwiper"
       slidesPerView={5}
     >

@@ -24,8 +24,6 @@ export const GlobalStyles = createGlobalStyle`
 
   .swiper-slide {
     background: ${(props) => props.theme["brand-white"]};
-
-    /* Center slide text vertically */
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -52,7 +50,7 @@ export const GlobalStyles = createGlobalStyle`
 
     @media screen and (max-width: 1366px) {
       width: 0.75rem;
-    height: 0.75rem;
+      height: 0.75rem;
     }
   }
 
