@@ -9,7 +9,7 @@ const Header: React.FC = () => {
         <Gamepad />
       </UserContainer>
     </HeaderContainer>
-  )
-}
+  );
+};
 
 export default Header;

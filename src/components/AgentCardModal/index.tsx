@@ -1,7 +1,7 @@
-import * as AlertDialog from "@radix-ui/react-alert-dialog";
-import Image from "next/image";
-import React from "react";
-import { VscClose } from "react-icons/vsc";
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import Image from 'next/image';
+import React from 'react';
+import { VscClose } from 'react-icons/vsc';
 
 import {
   ModalComponent,
@@ -11,7 +11,6 @@ import {
   CharSkillSection,
   CharSkill,
   ModalCloseButton,
-  AgentCardMoreInfo,
   OverlayBlur,
   ModalWrapper,
   CharInfoWrapper,
@@ -19,26 +18,30 @@ import {
   CharInfoBio,
   CharInfoCategory,
   CharInfoSkills,
-} from "./styles";
+  ModalToggle,
+  SkillDescription,
+  SkillContainer,
+} from './styles';
+
+interface SkillProps {
+  displayName: string;
+  description: string;
+  displayIcon: string;
+}
 
 interface IProps {
   name: string;
   modalDescription: string;
   char: string;
   bio: string;
+  skills: SkillProps[];
   category: string;
 }
 
-const AgentCardModal: React.FC<IProps> = ({
-  name,
-  bio,
-  category,
-  modalDescription,
-  char,
-}) => {
+const AgentCardModal: React.FC<IProps> = ({ name, bio, category, modalDescription, char, skills }) => {
   return (
     <ModalComponent>
-      <AgentCardMoreInfo />
+      <ModalToggle />
       <AlertDialog.Portal>
         <OverlayBlur />
         <ModalContainer>
@@ -58,10 +61,13 @@ const AgentCardModal: React.FC<IProps> = ({
               <section>
                 <CharInfoSkills>Skills</CharInfoSkills>
                 <CharSkillSection>
-                  <CharSkill />
-                  <CharSkill />
-                  <CharSkill />
-                  <CharSkill />
+                  {skills.map((e, key) => {
+                    return (
+                      <CharSkill key={key} title={e.displayName}>
+                        <Image layout="fill" src={e.displayIcon} alt={e.displayName} />
+                      </CharSkill>
+                    );
+                  })}
                 </CharSkillSection>
               </section>
             </CharInfoWrapper>

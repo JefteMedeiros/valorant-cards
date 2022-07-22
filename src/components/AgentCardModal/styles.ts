@@ -1,15 +1,17 @@
-import * as AlertDialog from "@radix-ui/react-alert-dialog";
-import styled from "styled-components";
-import { DocumentTextValorant } from "../../styles/Global/styles";
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import styled from 'styled-components';
+import { DocumentTextNunito, DocumentTextValorant } from '../../styles/Global/styles';
 
-export const AgentCardMoreInfo = styled(AlertDialog.Trigger)`
+export const ModalToggle = styled(AlertDialog.Trigger)`
   border: none;
   margin: auto;
-  content: "";
+  outline-offset: 0.1875rem;
+  content: '';
   width: 0.75rem;
   height: 0.75rem;
+  padding-bottom: 10px;
   border-radius: 50%;
-  background: ${(props) => props.theme["red-600"]};
+  background: ${props => props.theme['red-600']};
   transition: all 250ms;
 
   &:hover {
@@ -48,7 +50,7 @@ export const ModalContainer = styled(AlertDialog.Content)`
   }
 
   animation: OverlayShow cubic-bezier(0.16, 1, 0.3, 1) 250ms;
-  background-color: ${(props) => props.theme["brand-white"]};
+  background-color: ${props => props.theme['brand-white']};
   border-radius: 10px;
   z-index: 9999;
   position: absolute;
@@ -95,9 +97,9 @@ export const CharInfoCategory = styled(DocumentTextValorant)``;
 export const CharInfoSkills = styled(DocumentTextValorant)``;
 
 export const CharInfoBio = styled.p`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 0.8rem;
-  color: ${(props) => props.theme["red-500"]};
+  color: ${props => props.theme['red-500']};
 `;
 
 export const CharInfoDescription = styled(CharInfoBio)``;
@@ -107,12 +109,27 @@ export const CharSkillSection = styled.article`
   gap: 0.375rem;
 `;
 
-export const CharSkill = styled.article`
+export const CharSkill = styled.button`
+  position: relative;
+  border: none;
   width: 1.875rem;
   height: 1.875rem;
   border-radius: 4px;
-  background: #d9d9d9;
+  background: ${props => props.theme['red-500']};
+  transition: all 200ms;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
 `;
+
+export const SkillContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const SkillDescription = styled(DocumentTextNunito)``;
 
 export const ModalCloseButton = styled(AlertDialog.Cancel)`
   display: flex;
@@ -122,7 +139,7 @@ export const ModalCloseButton = styled(AlertDialog.Cancel)`
   top: 0.625rem;
   right: 0.625rem;
   font-size: 1.625rem;
-  color: ${(props) => props.theme["red-500"]};
+  color: ${props => props.theme['red-500']};
   transition: all 200ms;
 
   &:hover {

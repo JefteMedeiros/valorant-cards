@@ -1,5 +1,5 @@
-import React from "react";
-import { PaginationContainer } from "./styles";
+import React from 'react';
+import { PaginationContainer } from './styles';
 
 const Pagination: React.FC = () => {
   return (

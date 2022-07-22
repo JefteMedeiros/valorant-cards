@@ -3,11 +3,10 @@ import { CardsButton } from '../../styles/Global/styles';
 
 export const CardsContainer = styled.nav`
   display: flex;
-  margin-top: 8px;
+  margin-top: 0.5rem;
   gap: 1.25rem;
 `;
 
-export const PullCardButton = styled(CardsButton)`
-`;
+export const PullCardButton = styled(CardsButton)``;
 
 export const MixCardsButton = styled(CardsButton)``;

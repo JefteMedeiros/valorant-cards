@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
-import { CharContainer } from '../../styles/Global/styles';
+import { JettContainer } from './styles';
 
 const Jett: React.FC = () => {
   return (
-    <CharContainer>
+    <JettContainer>
       <Image layout="fill" src="/Jett.png" alt="Jett" />
-    </CharContainer>
+    </JettContainer>
   );
-}
+};
 
 export default Jett;

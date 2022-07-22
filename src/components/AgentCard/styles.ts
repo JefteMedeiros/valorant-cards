@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { DocumentTextNunito, DocumentTextValorant } from "../../styles/Global/styles";
+import styled from 'styled-components';
+import { DocumentTextNunito, DocumentTextValorant } from '../../styles/Global/styles';
 
 export const AgentCardContainer = styled.div`
   position: relative;
@@ -19,8 +19,8 @@ export const AgentCardScore = styled.div`
   top: 0.875rem;
   left: 0.875rem;
 
-  color: ${(props) => props.theme["red-500"]};
-  font-family: "Valorant", sans-serif;
+  color: ${props => props.theme['red-500']};
+  font-family: 'Valorant', sans-serif;
   font-size: 1.25rem;
 `;
 
@@ -66,6 +66,6 @@ export const AgentCardInteraction = styled.div`
   flex-direction: column;
 
   @media screen and (max-width: 1368px) {
-    margin-top: 0.5rem;
+    margin-top: 0;
   }
 `;

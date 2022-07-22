@@ -9,6 +9,6 @@ const Footer: React.FC = () => {
       </FooterText>
     </FooterContainer>
   );
-}
+};
 
 export default Footer;

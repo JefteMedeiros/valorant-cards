@@ -1,19 +1,15 @@
 import Head from 'next/head';
-import React, { useContext } from 'react';
-import { Context } from '../../context';
+import React from 'react';
 import Footer from '../Footer';
-import { Blur, LayoutContainer } from './styles';
+import { LayoutContainer } from './styles';
 
 interface IProps {
   children: React.ReactNode;
 }
 
-const Layout: React.FC<IProps> = ({children}) => {
-  const {toggleModal} = useContext(Context);
-
+const Layout: React.FC<IProps> = ({ children }) => {
   return (
     <LayoutContainer>
-      {toggleModal && <Blur />}
       <Head>
         <title>Valorant Cards</title>
       </Head>
@@ -21,6 +17,6 @@ const Layout: React.FC<IProps> = ({children}) => {
       <Footer />
     </LayoutContainer>
   );
-}
+};
 
 export default Layout;

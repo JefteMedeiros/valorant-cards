@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { DocumentTextNunito } from "../../styles/Global/styles";
+import styled from 'styled-components';
+import { DocumentTextNunito } from '../../styles/Global/styles';
 
 export const MainContainer = styled.section`
   display: flex;
@@ -8,18 +8,18 @@ export const MainContainer = styled.section`
   align-items: center;
   min-height: calc(100vh - 2.5625rem);
 
-  background: ${(props) => props.theme["brand-white"]};
+  background: ${props => props.theme['brand-white']};
 `;
 
 export const Logo = styled.div`
   position: relative;
-  width: 330px;
+  width: 20.625rem;
   margin-bottom: 3.2775rem;
-  height: 281px;
+  height: 17.5625rem;
 
   @media screen and (max-width: 1368px) {
-    width: 240px;
-    height: 196px;
+    width: 15rem;
+    height: 12.25rem;
   }
 `;
 
@@ -48,24 +48,24 @@ export const NameTitle = styled(DocumentTextNunito)`
 
 export const NameInput = styled.input`
   max-width: 100%;
+  outline-offset: 0.4375rem;
 
-  color: ${(props) => props.theme["red-500"]};
-  font-family: "Nunito", sans-serif;
+  color: ${props => props.theme['red-500']};
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.75rem;
 
-  outline: none;
   padding-bottom: 0.625rem;
 
   background: none;
 
   border: none;
-  border-bottom: 9px solid ${(props) => props.theme["red-500"]};
+  border-bottom: 9px solid ${props => props.theme['red-500']};
   border-radius: 10px;
 
   &:active {
-    border: 3px solid 9px solid ${(props) => props.theme["red-500"]};
+    border: 3px solid 9px solid ${props => props.theme['red-500']};
   }
 
   @media screen and (max-width: 1368px) {
@@ -75,27 +75,34 @@ export const NameInput = styled.input`
   }
 `;
 
-export const SeeCardsButton = styled.a`
+export const GenerateCardsButton = styled.a`
   margin-top: 3.5rem;
   padding: 0.5625rem 0;
   width: 100%;
+  outline-offset: 0.375rem;
+  outline-color: ${props => props.theme['red-500']};
 
   text-align: center;
   font-weight: bold;
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
   font-size: 1.75rem;
-  color: ${(props) => props.theme["red-500"]};
+  color: ${props => props.theme['red-500']};
   text-decoration: none;
 
-  border: 3px solid ${(props) => props.theme["red-500"]};
-  border-radius: 10px;
+  border: 3px solid ${props => props.theme['red-500']};
+  border-radius: 100px;
 
   background: none;
   transition: all 200ms;
 
   &:hover {
-    color: ${(props) => props.theme["brand-white"]};
+    transform: scale(1.03);
+    color: ${props => props.theme['brand-white']};
     cursor: pointer;
-    background: ${(props) => props.theme["red-500"]};
+    background: ${props => props.theme['red-500']};
+  }
+
+  &:active {
+    outline-offset: 0.125rem;
   }
 `;

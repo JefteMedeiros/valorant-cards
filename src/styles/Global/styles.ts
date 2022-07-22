@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   @font-face {
@@ -12,9 +12,16 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    outline-offset: 0.1875rem;
+    outline-color: ${props => props.theme['red-500']};
+  }
+
+  button {
+    outline-offset: 0.3125rem;
   }
 
   .swiper {
+    background: transparent;
     position: relative;
     max-width: 64.375rem;
     height: 100%;
@@ -39,7 +46,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .swiper-slide {
-    background: ${(props) => props.theme["brand-white"]};
+    background: ${props => props.theme['brand-white']};
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -58,7 +65,7 @@ export const GlobalStyles = createGlobalStyle`
     width: 0.875rem;
     height: 0.875rem;
     opacity: 1;
-    background: ${(props) => props.theme["red-700"]};
+    background: ${props => props.theme['red-700']};
 
     @media screen and (max-width: 1368px) {
       width: 0.75rem;
@@ -67,7 +74,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   .swiper-pagination-bullet-active {
-    background: ${(props) => props.theme["red-500"]};
+    background: ${props => props.theme['red-500']};
   }
 `;
 
@@ -99,7 +106,7 @@ export const CardWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  min-height: calc(100vh - 41px);
+  min-height: calc(100vh - 5.125rem);
 `;
 
 export const CardsButton = styled.button`
@@ -107,11 +114,11 @@ export const CardsButton = styled.button`
   font-weight: bold;
   padding: 0.5625rem 1.125rem;
   text-align: center;
-  font-family: "Nunito", sans-serif;
-  color: ${(props) => props.theme["red-500"]};
+  font-family: 'Nunito', sans-serif;
+  color: ${props => props.theme['red-500']};
   text-decoration: none;
 
-  border: 3px solid ${(props) => props.theme["red-500"]};
+  border: 3px solid ${props => props.theme['red-500']};
   border-radius: 100px;
 
   background: none;
@@ -119,9 +126,9 @@ export const CardsButton = styled.button`
 
   &:hover {
     transform: scale(1.05);
-    color: ${(props) => props.theme["brand-white"]};
+    color: ${props => props.theme['brand-white']};
     cursor: pointer;
-    background: ${(props) => props.theme["red-500"]};
+    background: ${props => props.theme['red-500']};
   }
 
   @media screen and (max-width: 1368px) {
@@ -130,14 +137,14 @@ export const CardsButton = styled.button`
 `;
 
 export const DocumentText = styled.div`
-  color: ${(props) => props.theme["red-500"]};
+  color: ${props => props.theme['red-500']};
   line-height: 120%;
 `;
 
 export const DocumentTextValorant = styled(DocumentText)`
-  font-family: "Valorant", sans-serif;
+  font-family: 'Valorant', sans-serif;
 `;
 
 export const DocumentTextNunito = styled(DocumentText)`
-  font-family: "Nunito", sans-serif;
+  font-family: 'Nunito', sans-serif;
 `;

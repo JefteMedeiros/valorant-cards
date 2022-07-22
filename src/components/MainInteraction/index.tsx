@@ -1,26 +1,22 @@
 import Image from 'next/image';
 import React from 'react';
-import { Logo, MainContainer, NameForm, NameInput, NameSection, NameTitle, SeeCardsButton } from './styles';
+import { GenerateCardsButton, Logo, MainContainer, NameForm, NameInput, NameSection, NameTitle } from './styles';
 
 const MainInteraction: React.FC = () => {
   return (
     <MainContainer>
       <Logo>
-        <Image priority layout="fill" src="/Logo.png" alt="Valorant Logo"/>
+        <Image priority layout="fill" src="/Logo.png" alt="Valorant Logo" />
       </Logo>
       <NameForm>
         <NameSection>
-          <NameTitle>
-            Digite seu nome
-          </NameTitle>
+          <NameTitle>Digite seu nome</NameTitle>
           <NameInput type="text" />
         </NameSection>
-        <SeeCardsButton href="/Cards">
-          Gerar Cards
-        </SeeCardsButton>
+        <GenerateCardsButton href="/Cards">Gerar Cards</GenerateCardsButton>
       </NameForm>
     </MainContainer>
   );
-}
+};
 
 export default MainInteraction;
