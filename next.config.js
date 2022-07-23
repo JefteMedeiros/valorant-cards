@@ -3,11 +3,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   reactStrictMode: false,
-  experimental: {
+  compiler: {
     styledComponents: true,
   },
   images: {
-    domains: ["media.valorant-api.com"]
+    domains: ["media.valorant-api.com", "img.icons8.com"]
   }
 };
 

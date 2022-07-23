@@ -67,7 +67,7 @@ export const GlobalStyles = createGlobalStyle`
     opacity: 1;
     background: ${props => props.theme['red-700']};
 
-    @media screen and (max-width: 1368px) {
+    @media screen and (max-width: 1400px) {
       width: 0.75rem;
       height: 0.75rem;
     }
@@ -84,7 +84,7 @@ export const CharContainer = styled.figure`
   width: 23.125rem;
   height: 35.375rem;
 
-  @media screen and (max-width: 1368px) {
+  @media screen and (max-width: 1400px) {
     width: 18.875rem;
     height: 25.875rem;
   }
@@ -98,6 +98,8 @@ export const HomeWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  min-height: calc(100vh - 2.5625rem);
 `;
 
 export const CardWrapper = styled.div`
@@ -106,7 +108,7 @@ export const CardWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  min-height: calc(100vh - 5.125rem);
+  min-height: calc(100vh - 5.75rem);
 `;
 
 export const CardsButton = styled.button`
@@ -131,7 +133,7 @@ export const CardsButton = styled.button`
     background: ${props => props.theme['red-500']};
   }
 
-  @media screen and (max-width: 1368px) {
+  @media screen and (max-width: 1400px) {
     font-size: 1.375rem;
   }
 `;

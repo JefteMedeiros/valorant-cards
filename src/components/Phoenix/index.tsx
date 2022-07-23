@@ -5,7 +5,7 @@ import { PhoenixContainer } from './styles';
 const Phoenix: React.FC = () => {
   return (
     <PhoenixContainer>
-      <Image layout="fill" src="/Phoenix.png" alt="Phoenix" />
+      <Image layout="fill" src="/Phoenix.png" alt="Phoenix" priority />
     </PhoenixContainer>
   );
 };

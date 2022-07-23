@@ -1,10 +1,11 @@
 import { useState, createContext, useEffect } from 'react';
-import { mock } from '../mock';
+import { Data } from '../@types';
 
-type DataMock = typeof mock.data;
 interface IProps {
   dataShuffle: () => void;
-  data: DataMock;
+  data: Data[];
+  username: string;
+  handleSetUsername: (username: string) => void;
   addRandom: () => void;
 }
 
@@ -17,16 +18,18 @@ export const DataContext = createContext({} as IProps);
 const ContextProvider: React.FC<ChildrenProps> = ({ children }) => {
   useEffect(() => {
     const dataLoader = async () => {
-      const response = await (await fetch('https://valorant-api.com/v1/agents?language=pt-BR&isPlayableCharacter=true')).json();
-      const shuffled = response.data.sort(() => 0.5 - Math.random());
-      setRemaining(shuffled.slice(5, -1));
+      const response = await fetch('https://valorant-api.com/v1/agents?language=pt-BR&isPlayableCharacter=true');
+      const { data } = await response.json();
+      const shuffled = data.sort(() => 0.5 - Math.random());
+      setRemaining(shuffled.slice(6, 19));
       setData(shuffled.slice(0, 5));
     };
     dataLoader();
   }, []);
 
-  const [remaining, setRemaining] = useState<DataMock>([])
-  const [data, setData] = useState<DataMock>([]);
+  const [username, setUsername] = useState<string>();
+  const [remaining, setRemaining] = useState<Data[]>([]);
+  const [data, setData] = useState<Data[]>([]);
 
   const dataShuffle = () => {
     const newArray = [...data];
@@ -38,12 +41,17 @@ const ContextProvider: React.FC<ChildrenProps> = ({ children }) => {
   };
 
   const addRandom = () => {
-    const randomIndex = Math.floor((Math.random() * (remaining.length) - 1) + 1)
+    const randomIndex = Math.floor(Math.random() * (remaining.length - 1));
     const randomItem = remaining[randomIndex];
     setData([...data, randomItem]);
-  }
+    setRemaining(remaining.filter(data => data.uuid !== randomItem.uuid));
+  };
 
-  return <DataContext.Provider value={{ addRandom, dataShuffle, data }}>{children}</DataContext.Provider>;
+  const handleSetUsername = (username: string) => {
+    setUsername(username);
+  };
+
+  return <DataContext.Provider value={{ handleSetUsername, username, addRandom, dataShuffle, data }}>{children}</DataContext.Provider>;
 };
 
 export default ContextProvider;

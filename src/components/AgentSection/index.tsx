@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Pagination, EffectCards } from 'swiper';
 import AgentCard from '../AgentCard';
@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 import { DataContext } from '../../context';
 
 const AgentSection: React.FC = () => {
-  const { data, dataShuffle } = useContext(DataContext);
+  const { data } = useContext(DataContext);
 
   const pagination: PaginationOptions = {
     clickable: true,
@@ -56,7 +56,7 @@ const AgentSection: React.FC = () => {
           <SwiperSlide key={data.uuid}>
             <AgentCard
               cardPoints={key + 1}
-              // O personagem Sova tem um valor Null na API, strict do TS desativado. 
+              // Alguns personagens tem um valor Null na API, strict do TS desativado.
               skills={data.abilities}
               bio={data.description}
               category={data.role.displayName}

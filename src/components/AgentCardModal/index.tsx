@@ -45,7 +45,7 @@ const AgentCardModal: React.FC<ModalProps> = ({ name, bio, category, modalDescri
         <ModalContainer>
           <ModalWrapper>
             <ModalChar>
-              <Image placeholder="blur" blurDataURL={char} layout="fill" src={char} alt={name} />
+              <Image placeholder="blur" blurDataURL={char} layout="fill" src={char} alt={name} priority />
             </ModalChar>
             <CharInfoWrapper>
               <section>
@@ -63,7 +63,12 @@ const AgentCardModal: React.FC<ModalProps> = ({ name, bio, category, modalDescri
                     return (
                       <CharSkill key={key} title={e.displayName}>
                         {/* O personagem Sova tem um valor Null na API. */}
-                        {e.displayIcon !== null && <Image layout="fill" src={e.displayIcon} alt={e.displayName} />}
+                        <Image
+                          layout="fill"
+                          src={e.displayIcon !== null ? e.displayIcon : 'https://img.icons8.com/ios/452/valorant.png'}
+                          alt={e.displayName}
+                          priority
+                        />
                       </CharSkill>
                     );
                   })}

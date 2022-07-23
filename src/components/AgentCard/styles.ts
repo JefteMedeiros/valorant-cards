@@ -8,7 +8,7 @@ export const AgentCardContainer = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-  @media screen and (max-width: 1368px) {
+  @media screen and (max-width: 1400px) {
     width: 11.0625rem;
     height: 16.1956rem;
   }
@@ -42,7 +42,7 @@ export const AgentCardChar = styled.div`
     object-fit: contain;
   }
 
-  @media screen and (max-width: 1368px) {
+  @media screen and (max-width: 1400px) {
     margin-bottom: -1rem;
     width: 14.8125rem;
     height: 13.25rem;
@@ -65,7 +65,7 @@ export const AgentCardInteraction = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media screen and (max-width: 1368px) {
+  @media screen and (max-width: 1400px) {
     margin-top: 0;
   }
 `;

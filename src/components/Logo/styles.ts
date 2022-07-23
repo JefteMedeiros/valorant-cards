@@ -4,7 +4,6 @@ export const LogoContainer = styled.div`
   position: relative;
   width: 15rem;
   height: 12.25rem;
-  margin-top: -6rem;
   margin-bottom: 0.625rem;
 
   img {
@@ -20,7 +19,7 @@ export const LogoContainer = styled.div`
     animation: ShowLogo cubic-bezier(0.16, 1, 0.3, 1) 2000ms;
   }
 
-  @media screen and (max-width: 1368px) {
+  @media screen and (max-width: 1400px) {
     margin-top: -3rem;
     width: 10.9375rem;
     height: 9.1875rem;
