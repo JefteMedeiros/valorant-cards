@@ -9,16 +9,11 @@ import { defaultTheme } from '../styles/Theme/styles';
 
 const Home: NextPage = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Layout>
-        <HomeWrapper>
-          <Phoenix />
-          <MainInteraction />
-          <Jett />
-        </HomeWrapper>
-      </Layout>
-      <GlobalStyles />
-    </ThemeProvider>
+    <HomeWrapper>
+      <Phoenix />
+      <MainInteraction />
+      <Jett />
+    </HomeWrapper>
   );
 };
 

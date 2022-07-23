@@ -23,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
   .swiper {
     background: transparent;
     position: relative;
-    max-width: 64.375rem;
+    width: 64.375rem;
     height: 100%;
     padding-top: 1.875rem;
     padding-bottom: 3.125rem;
@@ -124,7 +124,7 @@ export const CardsButton = styled.button`
   background: none;
   transition: all 200ms;
 
-  &:hover {
+  &:hover:not(disabled) {
     transform: scale(1.05);
     color: ${props => props.theme['brand-white']};
     cursor: pointer;

@@ -3,28 +3,29 @@ import Image from 'next/image';
 import AgentCardModal from '../AgentCardModal';
 
 import { AgentCardChar, AgentCardContainer, AgentCardDescription, AgentCardName, AgentCardScore, AgentCardInteraction } from './styles';
-interface SkillProps {
+export interface Ability {
   displayName: string;
   description: string;
   displayIcon: string;
 }
-interface IProps {
+interface AgentProps {
   char: string;
+  cardPoints: number;
   name: string;
   cardDescription: string;
   modalDescription: string;
   bio: string;
-  skills: SkillProps[];
+  skills: Ability[];
   category: string;
 }
 
-const AgentCard: React.FC<IProps> = ({ char, name, category, bio, modalDescription, cardDescription, skills }) => {
+const AgentCard: React.FC<AgentProps> = ({ cardPoints, char, name, category, bio, modalDescription, cardDescription, skills }) => {  
   return (
     <AgentCardContainer>
       <AgentCardChar>
         <Image layout="fill" alt="Jett" src={char} />
       </AgentCardChar>
-      <AgentCardScore>7</AgentCardScore>
+      <AgentCardScore>{cardPoints}</AgentCardScore>
       <AgentCardInteraction>
         <AgentCardName>{name}</AgentCardName>
         <AgentCardDescription>{cardDescription}</AgentCardDescription>

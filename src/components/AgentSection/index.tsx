@@ -1,36 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Keyboard, Pagination, EffectCards } from 'swiper';
 import AgentCard from '../AgentCard';
 import { KeyboardOptions, PaginationOptions } from 'swiper/types';
 
-import { mock } from '../../mock/index';
-
 import 'swiper/css';
 import 'swiper/css/keyboard';
 import 'swiper/css/pagination';
+import { DataContext } from '../../context';
 
 const AgentSection: React.FC = () => {
-  const [dataMock, setDataMock] = useState(mock.data);
-  const [change, setChange] = useState(false);
-
-  const shuffle = (array: any[]) => {
-    let m = array.length;
-    let t: number;
-    let i: number;
-    let j: number;
-
-    for (j = 0; j < m; j++) {
-      i = Math.floor(Math.random() * m--);
-
-      t = array[m];
-      array[m] = array[i];
-      array[i] = t;
-    }
-
-    setChange(!change);
-    return array;
-  };
+  const { data, dataShuffle } = useContext(DataContext);
 
   const pagination: PaginationOptions = {
     clickable: true,
@@ -71,22 +51,23 @@ const AgentSection: React.FC = () => {
       className="mySwiper"
       slidesPerView={5}
     >
-      {change !== -1 &&
-        dataMock.map(data => {
-          return (
-            <SwiperSlide key={data.uuid}>
-              <AgentCard
-                skills={data.abilities}
-                bio={data.description}
-                category={data.role.displayName}
-                name={data.displayName}
-                char={data.fullPortraitV2}
-                modalDescription={data.role.description}
-                cardDescription={data.role.displayName}
-              />
-            </SwiperSlide>
-          );
-        })}
+      {data.map((data, key) => {
+        return (
+          <SwiperSlide key={data.uuid}>
+            <AgentCard
+              cardPoints={key + 1}
+              // O personagem Sova tem um valor Null na API, strict do TS desativado. 
+              skills={data.abilities}
+              bio={data.description}
+              category={data.role.displayName}
+              name={data.displayName}
+              char={data.fullPortraitV2}
+              modalDescription={data.role.description}
+              cardDescription={data.role.displayName}
+            />
+          </SwiperSlide>
+        );
+      })}
     </Swiper>
   );
 };

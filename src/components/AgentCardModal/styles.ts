@@ -109,7 +109,7 @@ export const CharSkillSection = styled.article`
   gap: 0.375rem;
 `;
 
-export const CharSkill = styled.button`
+export const CharSkill = styled.div`
   position: relative;
   border: none;
   width: 1.875rem;
@@ -119,7 +119,6 @@ export const CharSkill = styled.button`
   transition: all 200ms;
 
   &:hover {
-    cursor: pointer;
     transform: scale(1.03);
   }
 `;

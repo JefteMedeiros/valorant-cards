@@ -19,26 +19,24 @@ import {
   CharInfoCategory,
   CharInfoSkills,
   ModalToggle,
-  SkillDescription,
-  SkillContainer,
 } from './styles';
 
-interface SkillProps {
+interface Abilities {
   displayName: string;
   description: string;
   displayIcon: string;
 }
 
-interface IProps {
+interface ModalProps {
   name: string;
   modalDescription: string;
   char: string;
   bio: string;
-  skills: SkillProps[];
+  skills: Abilities[];
   category: string;
 }
 
-const AgentCardModal: React.FC<IProps> = ({ name, bio, category, modalDescription, char, skills }) => {
+const AgentCardModal: React.FC<ModalProps> = ({ name, bio, category, modalDescription, char, skills }) => {
   return (
     <ModalComponent>
       <ModalToggle />
@@ -64,7 +62,8 @@ const AgentCardModal: React.FC<IProps> = ({ name, bio, category, modalDescriptio
                   {skills.map((e, key) => {
                     return (
                       <CharSkill key={key} title={e.displayName}>
-                        <Image layout="fill" src={e.displayIcon} alt={e.displayName} />
+                        {/* O personagem Sova tem um valor Null na API. */}
+                        {e.displayIcon !== null && <Image layout="fill" src={e.displayIcon} alt={e.displayName} />}
                       </CharSkill>
                     );
                   })}
