@@ -1,5 +1,6 @@
 import { useState, createContext, useEffect } from 'react';
 import { Data } from '../@types';
+import { dataInstance } from '../api';
 
 interface IProps {
   dataShuffle: () => void;
@@ -18,8 +19,8 @@ export const DataContext = createContext({} as IProps);
 const ContextProvider: React.FC<ChildrenProps> = ({ children }) => {
   useEffect(() => {
     const dataLoader = async () => {
-      const response = await fetch('https://valorant-api.com/v1/agents?language=pt-BR&isPlayableCharacter=true');
-      const { data } = await response.json();
+      const response = await dataInstance.get('/v1/agents');
+      const { data } = await response.data;
       const shuffled = data.sort(() => 0.5 - Math.random());
       setRemaining(shuffled.slice(6, 19));
       setData(shuffled.slice(0, 5));

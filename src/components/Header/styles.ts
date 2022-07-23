@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   background: ${props => props.theme['red-500']};
   color: white;
 
-  @media screen and (max-width: 1440px) {
+  @media screen and (max-width: 1600px) {
     background: transparent;
     color: ${props => props.theme['red-500']};
   }

@@ -19,9 +19,13 @@ export const LogoContainer = styled.div`
     animation: ShowLogo cubic-bezier(0.16, 1, 0.3, 1) 2000ms;
   }
 
-  @media screen and (max-width: 1400px) {
-    margin-top: -3rem;
-    width: 10.9375rem;
-    height: 9.1875rem;
+  @media screen and (max-width: 1600px) {
+    width: 9.0625rem;
+    height: 7.5625rem;
+  }
+
+  @media screen and (max-width: 560px) {
+    width: 7.8125rem;
+    height: 6.5rem;
   }
 `;

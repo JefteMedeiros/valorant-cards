@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { DocumentTextNunito } from '../../styles/Global/styles';
+import { Button, DocumentTextNunito } from '../../styles/Global/styles';
 
 export const MainContainer = styled.section`
   display: flex;
@@ -17,7 +17,7 @@ export const Logo = styled.div`
   margin-bottom: 3.2775rem;
   height: 17.5625rem;
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1500px) {
     width: 15rem;
     height: 12.25rem;
   }
@@ -41,14 +41,14 @@ export const NameTitle = styled(DocumentTextNunito)`
   font-weight: bold;
   margin-bottom: 3.375rem;
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1500px) {
     font-size: 1.75rem;
   }
 `;
 
 export const NameInput = styled.input`
   max-width: 100%;
-  outline-offset: 0.4375rem;
+  outline-offset: 2px;
 
   color: ${props => props.theme['red-500']};
   font-family: 'Nunito', sans-serif;
@@ -64,77 +64,27 @@ export const NameInput = styled.input`
   border-bottom: 7px solid ${props => props.theme['red-500']};
   border-radius: 8px;
 
-  &:active {
-    border: 3px solid 9px solid ${props => props.theme['red-500']};
+  &:focus {
+    outline: none;
   }
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1500px) {
     max-width: 18.75rem;
-
     font-size: 1.625rem;
   }
 `;
 
 export const HomeButtonContainer = styled.div`
   display: flex;
+  margin-top: 2.5rem;
   width: 100%;
   gap: 1rem;
 `;
 
-export const GenerateCards = styled.button`
-  margin-top: 3.5rem;
-  text-decoration: none;
-  text-align: center;
-  width: 100%;
-  background: transparent;
-  border: 2px solid ${props => props.theme['red-500']};
-  border-radius: 100px;
-  transition: all 200ms;
-  padding: 0.625rem 0.3125rem;
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.2rem;
-  color: ${props => props.theme['red-500']};
-  font-weight: bold;
-
-  &:hover:enabled {
-    transform: scale(1.03);
-    color: ${props => props.theme['brand-white']};
-    cursor: pointer;
-    background: ${props => props.theme['red-500']};
-  }
-
-  &:active:enabled {
-    outline-offset: 0.125rem;
-  }
-
-  &:disabled {
-    opacity: 0.7;
-  }
+export const GenerateCards = styled(Button)`
+  padding: 0.75rem 0;
 `;
 
-export const SaveNameButton = styled.button`
-  margin-top: 3.5rem;
-  text-align: center;
-  width: 100%;
-  background: transparent;
-
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.2rem;
-  color: ${props => props.theme['red-500']};
-  font-weight: bold;
-
-  border: 2px solid ${props => props.theme['red-500']};
-  border-radius: 100px;
-  transition: all 200ms;
-
-  &:hover {
-    transform: scale(1.03);
-    color: ${props => props.theme['brand-white']};
-    cursor: pointer;
-    background: ${props => props.theme['red-500']};
-  }
-
-  &:active {
-    outline-offset: 0.125rem;
-  }
+export const SaveNameButton = styled(Button)`
+  padding: 0.75rem 0;
 `;

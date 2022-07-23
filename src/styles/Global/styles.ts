@@ -67,7 +67,7 @@ export const GlobalStyles = createGlobalStyle`
     opacity: 1;
     background: ${props => props.theme['red-700']};
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1500px) {
       width: 0.75rem;
       height: 0.75rem;
     }
@@ -84,7 +84,7 @@ export const CharContainer = styled.figure`
   width: 23.125rem;
   height: 35.375rem;
 
-  @media screen and (max-width: 1400px) {
+  @media screen and (max-width: 1500px) {
     width: 18.875rem;
     height: 25.875rem;
   }
@@ -109,32 +109,44 @@ export const CardWrapper = styled.div`
   align-items: center;
 
   min-height: calc(100vh - 5.75rem);
+
+  @media screen and (max-width: 1600px) {
+    justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 560px) {
+    justify-content: center;
+  }
 `;
 
-export const CardsButton = styled.button`
-  font-size: 1.25rem;
-  font-weight: bold;
-  padding: 0.5625rem 1.125rem;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;
-  color: ${props => props.theme['red-500']};
+export const Button = styled.button`
   text-decoration: none;
-
-  border: 3px solid ${props => props.theme['red-500']};
+  text-align: center;
+  width: 100%;
+  background: transparent;
+  border: 2px solid ${props => props.theme['red-500']};
   border-radius: 100px;
-
-  background: none;
   transition: all 200ms;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  color: ${props => props.theme['red-500']};
+  font-weight: bold;
 
-  &:hover:not(disabled) {
-    transform: scale(1.05);
+  &:hover:enabled {
+    transform: scale(1.03);
     color: ${props => props.theme['brand-white']};
     cursor: pointer;
     background: ${props => props.theme['red-500']};
   }
 
-  @media screen and (max-width: 1400px) {
-    font-size: 1.375rem;
+  &:active:enabled {
+    outline-offset: 0.125rem;
+  }
+
+  &:disabled {
+    transform: scale(0.97);
+    cursor: not-allowed;
+    opacity: 0.7;
   }
 `;
 

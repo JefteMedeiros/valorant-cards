@@ -6,17 +6,20 @@ export const ModalToggle = styled(AlertDialog.Trigger)`
   border: none;
   margin: auto;
   outline-offset: 0.1875rem;
-  content: '';
   width: 0.75rem;
   height: 0.75rem;
-  padding-bottom: 10px;
-  border-radius: 50%;
+  border-radius: 100px;
   background: ${props => props.theme['red-600']};
   transition: all 250ms;
 
   &:hover {
     cursor: pointer;
     transform: scale(1.15);
+  }
+
+  @media screen and (max-width:1600px) {
+    width: 2.5rem;
+    height: 0.875rem;
   }
 `;
 

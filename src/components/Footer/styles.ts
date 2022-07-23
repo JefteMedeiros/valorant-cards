@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
-  padding: 7px 0;
+  padding: 0.4375rem 0;
   background: ${props => props.theme['red-500']};
 `;
 
